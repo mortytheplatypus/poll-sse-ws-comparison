@@ -118,6 +118,6 @@ Endpoints:
   📊 Polling:    GET  http://localhost:${PORT}/api/poll
   📡 SSE:        GET  http://localhost:${PORT}/api/sse
   🔌 WebSocket:  WS   ws://localhost:${PORT}/ws
-  ❤️  Health:     GET  http://localhost:${PORT}/health
+  ❤️ Health:     GET  http://localhost:${PORT}/health
 `);
 });
