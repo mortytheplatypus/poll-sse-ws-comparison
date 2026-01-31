@@ -1,0 +1,146 @@
+.App {
+  min-height: 100vh;
+  padding: 2rem;
+  background: #121a25;
+  color: #fff;
+}
+
+h1 {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+  text-align: center;
+}
+
+.subtitle {
+  color: #888;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.cards {
+  display: flex;
+  gap: 1.5rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.card {
+  background: #1e2a3a;
+  border-radius: 16px;
+  padding: 1.5rem;
+  width: 320px;
+  border: 2px solid #2d3a4a;
+  transition: all 0.3s ease;
+}
+
+.card.active {
+  border-color: #4ade80;
+  box-shadow: 0 0 20px rgba(74, 222, 128, 0.2);
+}
+
+.card h2 {
+  margin: 0 0 0.5rem 0;
+  font-size: 1.5rem;
+}
+
+.card .description {
+  color: #888;
+  font-size: 0.85rem;
+  margin-bottom: 1rem;
+}
+
+.controls {
+  margin-bottom: 1rem;
+}
+
+.controls button {
+  width: 100%;
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  background: #010e20;
+  color: white;
+  transition: all 0.2s ease;
+}
+
+.controls button:hover {
+  background: #041630;
+  transform: translateY(-1px);
+}
+
+.card.active .controls button {
+  background: #ef4444;
+}
+
+.card.active .controls button:hover {
+  background: #dc2626;
+}
+
+.stats {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+  padding: 0.5rem;
+  background: #0d1520;
+  border-radius: 8px;
+}
+
+.status {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.85rem;
+}
+
+.status::before {
+  content: '';
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #ef4444;
+}
+
+.status.online::before {
+  background: #4ade80;
+  box-shadow: 0 0 8px #4ade80;
+}
+
+.count {
+  font-size: 0.85rem;
+  color: #888;
+}
+
+.data {
+  background: #0d1520;
+  border-radius: 8px;
+  padding: 1rem;
+  min-height: 80px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.timestamp {
+  font-size: 0.95rem;
+  color: #4ade80;
+  margin-bottom: 0.5rem;
+  word-break: break-word;
+}
+
+.random {
+  font-family: monospace;
+  font-size: 0.8rem;
+  color: #888;
+}
+
+.placeholder {
+  color: #555;
+  text-align: center;
+  font-style: italic;
+}
