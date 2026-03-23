@@ -7,6 +7,12 @@ export function usePolling() {
   const [count, setCount] = useState(0);
   const intervalRef = useRef(null);
 
+  const reset = useCallback(() => {
+    stop();
+    setCount(0);
+    setData(null);
+  })
+
   const stop = useCallback(() => {
     setActive(false);
     if (intervalRef.current) {
@@ -17,7 +23,6 @@ export function usePolling() {
 
   const start = useCallback(() => {
     setActive(true);
-    setCount(0);
     const poll = async () => {
       try {
         const res = await fetch(`${API_BASE}/api/poll`);
@@ -41,5 +46,5 @@ export function usePolling() {
     };
   }, []);
 
-  return { data, active, count, start, stop };
+  return { data, active, count, start, stop, reset };
 }

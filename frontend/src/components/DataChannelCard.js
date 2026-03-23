@@ -12,6 +12,7 @@ export function DataChannelCard({
   active,
   onStart,
   onStop,
+  onReset,
   statusWhenActive,
   statusWhenInactive,
   countLabel,
@@ -36,7 +37,7 @@ export function DataChannelCard({
         </div>
       </div>
       <p className="description">{description}</p>
-      <div className="controls">
+      <div className="controls controls-primary">
         <button type="button" onClick={active ? onStop : onStart}>
           {active ? 'Stop' : 'Start'}
         </button>
@@ -59,6 +60,11 @@ export function DataChannelCard({
           <div className="placeholder">No data yet</div>
         )}
       </div>
+      <div className="controls controls-reset">
+        <button type="button" disabled={active || !data} onClick={onReset}>
+          Reset
+        </button>
+      </div>
     </div>
   );
 }
@@ -70,6 +76,7 @@ DataChannelCard.propTypes = {
   active: PropTypes.bool.isRequired,
   onStart: PropTypes.func.isRequired,
   onStop: PropTypes.func.isRequired,
+  onReset: PropTypes.func.isRequired,
   statusWhenActive: PropTypes.string.isRequired,
   statusWhenInactive: PropTypes.string.isRequired,
   countLabel: PropTypes.string.isRequired,

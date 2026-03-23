@@ -41,6 +41,7 @@ export default function App() {
           active={poll.active}
           onStart={poll.start}
           onStop={poll.stop}
+          onReset={poll.reset}
           statusWhenActive="Active"
           statusWhenInactive="Inactive"
           countLabel="Requests"
@@ -54,6 +55,7 @@ export default function App() {
           active={sse.active}
           onStart={sse.start}
           onStop={sse.stop}
+          onReset={sse.reset}
           statusWhenActive="Connected"
           statusWhenInactive="Disconnected"
           countLabel="Messages"
@@ -67,6 +69,7 @@ export default function App() {
           active={ws.active}
           onStart={ws.start}
           onStop={ws.stop}
+          onReset={ws.reset}
           statusWhenActive="Connected"
           statusWhenInactive="Disconnected"
           countLabel="Messages"

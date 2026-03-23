@@ -7,6 +7,12 @@ export function useWebSocket() {
   const [count, setCount] = useState(0);
   const wsRef = useRef(null);
 
+  const reset = useCallback(() => {
+    stop();
+    setCount(0);
+    setData(null);
+  })
+
   const stop = useCallback(() => {
     setActive(false);
     if (wsRef.current) {
@@ -17,7 +23,6 @@ export function useWebSocket() {
 
   const start = useCallback(() => {
     setActive(true);
-    setCount(0);
     const ws = new WebSocket(WS_URL);
     wsRef.current = ws;
 
@@ -45,5 +50,5 @@ export function useWebSocket() {
     };
   }, []);
 
-  return { data, active, count, start, stop };
+  return { data, active, count, start, stop, reset };
 }

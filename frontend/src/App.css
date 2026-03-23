@@ -126,6 +126,7 @@ h1 {
 }
 
 .controls {
+  margin-top: 1rem;
   margin-bottom: 1rem;
 }
 
@@ -143,16 +144,35 @@ h1 {
 }
 
 .controls button:hover {
-  background: #041630;
+  background: #06162b;
   transform: translateY(-1px);
 }
 
-.card.active .controls button {
-  background: #ef4444;
+.card.active .controls-primary button {
+  background: #dc2626;
 }
 
-.card.active .controls button:hover {
+.card.active .controls-primary button:hover {
+  background: #9a1010;
+}
+
+.controls-reset button {
+  background: #010e20;
+}
+
+.controls-reset button:disabled {
+  background: #010e20;
+  color: #8ea0bc;
+  cursor: default;
+  transform: none;
+}
+
+.controls-reset button:not(:disabled) {
   background: #dc2626;
+}
+
+.controls-reset button:not(:disabled):hover {
+  background: #9a1010;
 }
 
 .stats {

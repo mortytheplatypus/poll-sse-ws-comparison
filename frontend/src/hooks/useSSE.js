@@ -7,6 +7,12 @@ export function useSSE() {
   const [count, setCount] = useState(0);
   const sourceRef = useRef(null);
 
+  const reset = useCallback(() => {
+    stop();
+    setCount(0);
+    setData(null);
+  })
+
   const stop = useCallback(() => {
     setActive(false);
     if (sourceRef.current) {
@@ -17,7 +23,6 @@ export function useSSE() {
 
   const start = useCallback(() => {
     setActive(true);
-    setCount(0);
     const eventSource = new EventSource(`${API_BASE}/api/sse`);
     sourceRef.current = eventSource;
 
@@ -41,5 +46,5 @@ export function useSSE() {
     };
   }, []);
 
-  return { data, active, count, start, stop };
+  return { data, active, count, start, stop, reset };
 }
